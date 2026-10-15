@@ -1,13 +1,8 @@
 import React from 'react'
-import Home from './pages/Home'
+import AppContent from './AppContent'
 
 function App() {
-  return (
-    <>
-      <h1>Heritage Admin Panel</h1>
-      <Home />
-    </>
-  )
+  return <AppContent />
 }
 
 export default App
