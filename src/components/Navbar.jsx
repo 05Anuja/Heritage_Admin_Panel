@@ -45,7 +45,7 @@ function Navbar({ onMenuClick }) {
         <button
           type="button"
           aria-label="Notifications"
-          onclick={() => alert("Notifications clicked!")}
+          onClick={() => alert("Notifications clicked!")}
           className="relative rounded-full p-2.5 text-[#75695D] transition hover:bg-[#F5F0E8]"
         >
           <Bell size={20} />
