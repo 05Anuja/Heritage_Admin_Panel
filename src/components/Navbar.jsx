@@ -29,11 +29,11 @@ function Navbar({ onMenuClick }) {
         </button>
 
         <div className="min-w-0">
-          <div className="flex items-center gap-2 text-xs text-[#9B8D80]">
+          {/* <div className="flex items-center gap-2 text-xs text-[#9B8D80]">
             <span className="hidden sm:inline">Heritage Bharat</span>
             <ChevronRight size={14} className="hidden sm:block" />
             <span>Admin</span>
-          </div>
+          </div> */}
 
           <h2 className="mt-1 truncate text-lg font-semibold text-[#2B2520] sm:text-xl">
             {title}
@@ -45,6 +45,7 @@ function Navbar({ onMenuClick }) {
         <button
           type="button"
           aria-label="Notifications"
+          onclick={() => alert("Notifications clicked!")}
           className="relative rounded-full p-2.5 text-[#75695D] transition hover:bg-[#F5F0E8]"
         >
           <Bell size={20} />
@@ -62,7 +63,7 @@ function Navbar({ onMenuClick }) {
 
           <div className="hidden text-left sm:block">
             <p className="text-sm font-medium text-[#2B2520]">Heritage Admin</p>
-            <p className="text-xs text-[#9B8D80]">Administrator</p>
+            {/* <p className="text-xs text-[#9B8D80]">Administrator</p> */}
           </div>
         </button>
       </div>
