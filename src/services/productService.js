@@ -30,7 +30,7 @@ export const addProduct = async ({formData, images}) => {
     payload.append("images", image);
   });
 
-  const res = await Axios.post('/products', payload);
+  const res = await Axios.post('/products/add-product', payload);
   return res.data;
 }
 

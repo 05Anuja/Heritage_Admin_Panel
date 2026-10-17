@@ -19,6 +19,17 @@ Axios.interceptors.request.use(
       config.headers.Authorization = `Bearer ${token}`;
     }
 
+    if (config.data instanceof FormData) {
+      config.headers.delete?.("Content-Type");
+
+      if (config.headers.set) {
+        config.headers.set("Content-Type", undefined);
+      } else {
+        delete config.headers["Content-Type"];
+        delete config.headers["content-type"];
+      }
+    }
+
     return config;
   },
   (error) => Promise.reject(error)
