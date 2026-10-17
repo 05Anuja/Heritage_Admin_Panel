@@ -5,6 +5,7 @@ import Dashboard from "../src/pages/Dashboard";
 import Products from "../src/pages/Products";
 import Enquiries from "../src/pages/Enquiries";
 import NotFound from "../src/pages/NotFound";
+import AddProduct from "./pages/products/AddProduct";
 // import Settings from "../src/pages/Settings";
 
 function AppContent() {
@@ -17,8 +18,8 @@ function AppContent() {
       <Route element={<AdminLayout />}>
         <Route path="/" element={<Dashboard />} />
         <Route path="/products" element={<Products />} />
-        {/* <Route path="/products/add" element={<AddProducts/>}/>
-                <Route path="/products/edit/:id" element={<EditProducts/>}/> */}
+        <Route path="/products/add" element={<AddProduct />} />
+        {/* <Route path="/products/edit/:id" element={<EditProducts/>}/> */}
         <Route path="/enquiries" element={<Enquiries />} />
         {/* <Route path="/settings" element={<Settings />} /> */}
       </Route>
