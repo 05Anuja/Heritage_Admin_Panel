@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { isTokenValid } from "../utils/auth";
 
 const ProtectedRoute = () => {
-  return (
-    <div>ProtectedRoute</div>
-  )
-}
+  const location = useLocation();
 
-export default ProtectedRoute
+  if (!isTokenValid()) {
+    return <Navigate to="/login" replace state={{ from: location }} />;
+  }
+
+  return <Outlet />;
+};
+
+export default ProtectedRoute;

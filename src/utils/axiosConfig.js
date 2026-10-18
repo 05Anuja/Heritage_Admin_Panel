@@ -39,7 +39,14 @@ Axios.interceptors.request.use(
 Axios.interceptors.response.use(
   (response) => response,
   (error) => {
-    // Handle unauthorized responses here when auth flow is implemented.
+    if (error.response?.status === 401) {
+      localStorage.removeItem("token");
+
+      if (window.location.pathname !== "/login") {
+        window.location.replace("/login");
+      }
+    }
+
     return Promise.reject(error);
   }
 );

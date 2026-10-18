@@ -8,20 +8,27 @@ import NotFound from "../src/pages/NotFound";
 import AddProduct from "./pages/products/AddProduct";
 // import Settings from "../src/pages/Settings";
 
+import ProtectedRoute from "../src/components/ProtectedRoute";
+import PublicRoute from "../src/components/PublicRoute";
+
 function AppContent() {
   return (
     <Routes>
       {/* Login Page */}
-      <Route path="/login" element={<Login />} />
+      <Route element={<PublicRoute />}>
+        <Route path="/login" element={<Login />} />
+      </Route>
 
       {/* Admin Layout and nested routes */}
-      <Route element={<AdminLayout />}>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/add" element={<AddProduct />} />
-        {/* <Route path="/products/edit/:id" element={<EditProducts/>}/> */}
-        <Route path="/enquiries" element={<Enquiries />} />
-        {/* <Route path="/settings" element={<Settings />} /> */}
+      <Route element={<ProtectedRoute />}>
+        <Route element={<AdminLayout />}>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/add" element={<AddProduct />} />
+          {/* <Route path="/products/edit/:id" element={<EditProducts/>}/> */}
+          <Route path="/enquiries" element={<Enquiries />} />
+          {/* <Route path="/settings" element={<Settings />} /> */}
+        </Route>
       </Route>
 
       {/* Unknown routes */}
