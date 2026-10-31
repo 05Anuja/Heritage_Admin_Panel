@@ -12,7 +12,7 @@ export const getProducts = async () => {
 export const addProduct = async ({formData, images}) => {
     const payload = new FormData();
 
-   payload.append("name", formData.name);
+  payload.append("name", formData.name);
   payload.append("category", formData.category);
   payload.append("description", formData.description);
   payload.append("material", formData.material);
