@@ -18,7 +18,7 @@ function Navbar({ onMenuClick }) {
     : pageTitles[location.pathname] || "Admin Panel";
 
   return (
-    <header className="sticky top-0 z-30 flex h-[76px] items-center justify-between border-b border-[#EAE2D9] bg-white/95 px-4 backdrop-blur sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-30 flex h-19 items-center justify-between border-b border-[#EAE2D9] bg-white/95 px-4 backdrop-blur sm:px-6 lg:px-8">
       {/* Left Section */}
       <div className="flex min-w-0 items-center gap-4">
         <button

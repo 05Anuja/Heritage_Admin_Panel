@@ -17,6 +17,16 @@ import {
 
 import { getProductById } from "../../services/productService.js";
 
+const InfoItem = ({ label, value, icon: Icon }) => (
+  <div className="bg-[#FAF8F4] rounded-xl p-4">
+    <div className="flex items-center gap-2 text-[#987B61] mb-2">
+      {Icon && <Icon size={16} />}
+      <span className="text-sm">{label}</span>
+    </div>
+    <p className="text-[#35251C] font-semibold">{value || "Not specified"}</p>
+  </div>
+);
+
 const ProductDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -53,7 +63,7 @@ const ProductDetails = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-[400px]">
+      <div className="flex justify-center items-center min-h-100">
         <p className="text-[#795334]">Loading product details...</p>
       </div>
     );
@@ -72,16 +82,6 @@ const ProductDetails = () => {
       </div>
     );
   }
-
-  const InfoItem = ({ label, value, icon: Icon }) => (
-    <div className="bg-[#FAF8F4] rounded-xl p-4">
-      <div className="flex items-center gap-2 text-[#987B61] mb-2">
-        {Icon && <Icon size={16} />}
-        <span className="text-sm">{label}</span>
-      </div>
-      <p className="text-[#35251C] font-semibold">{value || "Not specified"}</p>
-    </div>
-  );
 
   return (
     <div className="p-4 md:p-8 bg-[#FAF9F6] min-h-screen">
@@ -118,7 +118,7 @@ const ProductDetails = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         {/* Image Gallery */}
         <div className="bg-white rounded-2xl border border-[#E8E0D5] p-5 shadow-sm">
-          <div className="bg-[#FAF8F4] rounded-xl overflow-hidden h-[350px] md:h-[450px] flex items-center justify-center">
+          <div className="bg-[#FAF8F4] rounded-xl overflow-hidden h-87.5 md:h-112.5 flex items-center justify-center">
             {product.images?.length > 0 ? (
               <img
                 src={product.images[selectedImage]}

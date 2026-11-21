@@ -30,11 +30,11 @@ const navigation = [
 ];
 
 const secondaryNavigation = [
-  {
-    name: "Settings",
-    path: "/settings",
-    icon: Settings,
-  },
+  // {
+  //   name: "Settings",
+  //   path: "/settings",
+  //   icon: Settings,
+  // },
 ];
 
 function Sidebar({ isOpen, onClose }) {

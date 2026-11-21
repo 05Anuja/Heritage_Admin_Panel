@@ -16,6 +16,7 @@ import {
   getProductById,
   updateProduct,
 } from "../../services/productService.js";
+import toast from "react-hot-toast";
 
 const EditProduct = () => {
   const { id } = useParams();
@@ -154,13 +155,15 @@ const EditProduct = () => {
         images: newImages,
       });
 
-      alert("Product updated successfully!");
+      toast.success("Product updated successfully!");
 
       navigate("/products");
     } catch (err) {
       console.error("Update product error:", err);
 
-      setError(err.response?.data?.message || "Failed to update product.");
+      const errorMsg = err.response?.data?.message || "Failed to update product.";
+      setError(errorMsg);
+      toast.error(errorMsg);
     } finally {
       setSaving(false);
     }
@@ -173,7 +176,7 @@ const EditProduct = () => {
 
   if (loading) {
     return (
-      <div className="min-h-[400px] flex items-center justify-center">
+      <div className="min-h-100 flex items-center justify-center">
         <p className="text-[#795334] font-medium">Loading product...</p>
       </div>
     );
