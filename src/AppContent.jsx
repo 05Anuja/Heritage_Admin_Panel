@@ -10,6 +10,8 @@ import AddProduct from "./pages/products/AddProduct";
 
 import ProtectedRoute from "../src/components/ProtectedRoute";
 import PublicRoute from "../src/components/PublicRoute";
+import ProductDetails from "./pages/products/ProductDetails";
+import EditProduct from "./pages/products/EditProduct";
 
 function AppContent() {
   return (
@@ -25,7 +27,8 @@ function AppContent() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/add" element={<AddProduct />} />
-          {/* <Route path="/products/edit/:id" element={<EditProducts/>}/> */}
+          <Route path="/products/view/:id" element={<ProductDetails />} />
+          <Route path="/products/edit/:id" element={<EditProduct />} />
           <Route path="/enquiries" element={<Enquiries />} />
           {/* <Route path="/settings" element={<Settings />} /> */}
         </Route>

@@ -34,7 +34,7 @@ const ProductTable = ({ products = [], loading, onDelete }) => {
 
   return (
     <div className="overflow-x-auto rounded-2xl border border-[#EAE2D7] bg-white shadow-sm">
-      <table className="w-full min-w-[850px] text-left">
+      <table className="w-full min-w-212.5 text-left">
         <thead className="bg-[#F7F3EC]">
           <tr className="text-xs uppercase tracking-wider text-[#81756A]">
             <th scope="col" className="px-5 py-4 font-semibold">
