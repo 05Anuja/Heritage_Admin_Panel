@@ -36,6 +36,7 @@ const EditProduct = () => {
     dupatta: "",
     features: [],
     featured: false,
+    bestseller: true,
     active: true,
   });
 
@@ -66,6 +67,7 @@ const EditProduct = () => {
           dupatta: product.dupatta || "",
           features: product.features || [],
           featured: product.featured ?? false,
+          bestseller: product.bestseller ?? false,
           active: product.active ?? true,
         });
 
@@ -161,7 +163,8 @@ const EditProduct = () => {
     } catch (err) {
       console.error("Update product error:", err);
 
-      const errorMsg = err.response?.data?.message || "Failed to update product.";
+      const errorMsg =
+        err.response?.data?.message || "Failed to update product.";
       setError(errorMsg);
       toast.error(errorMsg);
     } finally {
@@ -579,6 +582,25 @@ const EditProduct = () => {
               >
                 <option value="true">Featured</option>
                 <option value="false">Not Featured</option>
+              </select>
+            </div>
+
+            <div>
+              <label className={labelClass}>Bestselling Product</label>
+
+              <select
+                name="bestseller"
+                value={String(formData.bestseller)}
+                onChange={(e) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    bestseller: e.target.value === "true",
+                  }))
+                }
+                className={inputClass}
+              >
+                <option value="true">Yes</option>
+                <option value="false">No</option>
               </select>
             </div>
           </div>

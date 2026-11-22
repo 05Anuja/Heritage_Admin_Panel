@@ -21,6 +21,7 @@ const initialFormData = {
   dupatta: "",
   features: [""],
   featured: false,
+  bestseller: true,
   active: true,
 };
 
@@ -462,6 +463,26 @@ const ProductForm = ({ onSubmit, submitting = false }) => {
               </span>
               <span className="mt-1 block text-xs text-[#81756A]">
                 Mark this product as featured.
+              </span>
+            </span>
+          </label>
+
+          <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-[#EAE2D7] p-4 transition hover:bg-[#FCFAF7]">
+            <input
+              type="checkbox"
+              name="bestseller"
+              checked={formData.bestseller}
+              onChange={handleChange}
+              disabled={submitting}
+              className="mt-1 h-4 w-4 accent-[#704A2D]"
+            />
+
+            <span>
+              <span className="block text-sm font-semibold text-[#49392C]">
+                Bestselling Product
+              </span>
+              <span className="mt-1 block text-xs text-[#81756A]">
+                Mark this product as bestselling.
               </span>
             </span>
           </label>

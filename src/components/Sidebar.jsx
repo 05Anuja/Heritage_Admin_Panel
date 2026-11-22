@@ -9,6 +9,7 @@ import {
   PanelLeftClose,
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { frontend_url } from "../../constants";
 
 const navigation = [
   {
@@ -80,7 +81,7 @@ function Sidebar({ isOpen, onClose }) {
         }`}
       >
         {/* Brand */}
-        <div className="flex h-[76px] items-center justify-between border-b border-white/10 px-5">
+        <div className="flex h-19 items-center justify-between border-b border-white/10 px-5">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#C58B52]">
               <Gem size={23} />
@@ -122,7 +123,7 @@ function Sidebar({ isOpen, onClose }) {
             {secondaryNavigation.map(renderLink)}
 
             <a
-              href="https://google.com/"
+              href={frontend_url}
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-[#D6C6B6] transition-colors hover:bg-white/10 hover:text-white"

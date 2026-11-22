@@ -27,9 +27,9 @@ const ProductRow = ({ product, onDelete }) => {
               {product.name || "Unnamed Product"}
             </p>
 
-            <p className="mt-1 text-xs text-[#81756A]">
+            {/* <p className="mt-1 text-xs text-[#81756A]">
               ID: {product._id?.slice(-6).toUpperCase() || "—"}
-            </p>
+            </p> */}
           </div>
         </div>
       </td>
