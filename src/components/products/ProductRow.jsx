@@ -1,5 +1,6 @@
 import React from "react";
 import ProductActions from "./ProductActions";
+import { Tag } from "lucide-react";
 
 const ProductRow = ({ product, onDelete }) => {
   const image = product.images?.[0];
@@ -61,6 +62,13 @@ const ProductRow = ({ product, onDelete }) => {
             <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-3 py-1 text-xs font-medium text-amber-700">
               <span aria-hidden="true">★</span>
               Featured
+            </span>
+          )}
+
+          {product.bestseller && (
+            <span className="px-3 py-1 rounded-full bg-rose-50 text-rose-700 text-sm font-medium flex items-center gap-1">
+              <Tag size={14} />
+              Bestseller
             </span>
           )}
         </div>

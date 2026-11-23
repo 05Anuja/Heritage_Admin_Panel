@@ -361,7 +361,7 @@ const Dashboard = () => {
               </h2>
 
               <p className="text-sm text-[#927B69] mt-1">
-                Latest products added to your store.
+                Products added today.
               </p>
             </div>
 
@@ -427,7 +427,10 @@ const Dashboard = () => {
             ) : (
               <div className="p-10 text-center text-[#927B69]">
                 <Package size={30} className="mx-auto mb-2 opacity-50" />
-                No products found.
+                <p className="font-medium">No products added today.</p>
+                <p className="text-xs mt-1 text-[#A18D7A]">
+                  Newly added products will appear here.
+                </p>
               </div>
             )}
           </div>
@@ -442,7 +445,7 @@ const Dashboard = () => {
               </h2>
 
               <p className="text-sm text-[#927B69] mt-1">
-                Latest customer messages.
+                Customer enquiries received today.
               </p>
             </div>
 
@@ -494,7 +497,10 @@ const Dashboard = () => {
             ) : (
               <div className="p-10 text-center text-[#927B69]">
                 <MessageSquare size={30} className="mx-auto mb-2 opacity-50" />
-                No enquiries found.
+                <p className="font-medium">No enquiries received today.</p>
+                <p className="text-xs mt-1 text-[#A18D7A]">
+                  New customer enquiries will appear here.
+                </p>
               </div>
             )}
           </div>

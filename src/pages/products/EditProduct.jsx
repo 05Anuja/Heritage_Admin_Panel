@@ -36,7 +36,7 @@ const EditProduct = () => {
     dupatta: "",
     features: [],
     featured: false,
-    bestseller: true,
+    bestseller: false,
     active: true,
   });
 

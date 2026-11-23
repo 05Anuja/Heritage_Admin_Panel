@@ -172,6 +172,13 @@ const ProductDetails = () => {
                 Featured
               </span>
             )}
+
+            {product.bestseller && (
+              <span className="px-3 py-1 rounded-full bg-rose-50 text-rose-700 text-sm font-medium flex items-center gap-1">
+                <Tag size={14} />
+                Bestseller
+              </span>
+            )}
           </div>
 
           {/* <p className="text-sm text-[#987B61] mb-2">

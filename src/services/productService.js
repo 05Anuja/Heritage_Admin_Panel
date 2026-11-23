@@ -1,4 +1,3 @@
-
 import Axios from "../utils/axiosConfig.js";
 
 // Get all products
@@ -25,6 +24,7 @@ export const updateProduct = async ({ id, formData, images }) => {
     payload.append("blouse", formData.blouse);
     payload.append("dupatta", formData.dupatta);
     payload.append("featured", String(formData.featured));
+    payload.append("bestseller", String(formData.bestseller));
     payload.append("active", String(formData.active));
 
     formData.features.forEach((feature) => {
@@ -55,6 +55,7 @@ export const addProduct = async ({ formData, images }) => {
     payload.append("blouse", formData.blouse);
     payload.append("dupatta", formData.dupatta);
     payload.append("featured", String(formData.featured));
+    payload.append("bestseller", String(formData.bestseller));
     payload.append("active", String(formData.active));
 
     formData.features.forEach((feature) => {
